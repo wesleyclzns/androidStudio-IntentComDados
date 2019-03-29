@@ -1,5 +1,6 @@
 package br.com.intentcomdados
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -14,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         btnEntrar.setOnClickListener {
 
             if (edtNome.text.isNotEmpty()){
+                val nomeCapturado = edtNome.text.toString()
+                val intentTelaBemVindo = Intent(this, TelaBemVindo::class.java)
+
+                intentTelaBemVindo.putExtra("DadosNome", nomeCapturado)
+
+                startActivity(intentTelaBemVindo)
 
             } else{}
             val alertaToast = Toast.makeText(this, "Preencha o campo corretamente.", Toast.LENGTH_LONG)
