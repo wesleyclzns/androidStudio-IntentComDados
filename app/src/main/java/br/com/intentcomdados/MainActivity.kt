@@ -18,13 +18,14 @@ class MainActivity : AppCompatActivity() {
                 val nomeCapturado = edtNome.text.toString()
                 val intentTelaBemVindo = Intent(this, TelaBemVindo::class.java)
 
-                intentTelaBemVindo.putExtra("DadosNome", nomeCapturado)
+                intentTelaBemVindo.putExtra("DadoNome", nomeCapturado)
 
                 startActivity(intentTelaBemVindo)
 
-            } else{}
-            val alertaToast = Toast.makeText(this, "Preencha o campo corretamente.", Toast.LENGTH_LONG)
-            alertaToast.show()
+            } else {
+                val alertaToast = Toast.makeText(this, "Preencha o campo corretamente.", Toast.LENGTH_LONG)
+                alertaToast.show()
+            }
 
         }
     }
